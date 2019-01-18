@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    title VitaVerde
+    link(rel="stylesheet", type="text/css", href="main.css")
+  body
+    .l-wrapper
+      include components/mixins
+      include components/loading
+      include components/navigation
+      include components/cover_slider
+      include components/services
+      include components/reviews-slider
+      include components/benefits
+      include components/contact
+    script(src="main.js")
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp2ofAf-mxoJiBxPgZv3JmRpN12KMFnQc&callback=initMap")

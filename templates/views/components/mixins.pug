@@ -1,0 +1,20 @@
+- var mq = [768, 1024]
+
+mixin img(name, classes)
+    img(class=`${classes}` alt="" src=`assets/${name}`)
+
+mixin bg_img(name, ext, classes)
+    picture.u-bg-img(class=`${classes}`)
+        source(media=`max-width: ${mq[0] - 1}px` srcset=`assets/${name}_${mq[0]}.${ext} 1x, assets/${name}_${mq[0]}@2x.${ext} 2x`)
+        source(media=`max-width: ${mq[1] - 1}px` srcset=`assets/${name}_${mq[1]}.${ext} 1x, assets/${name}_${mq[1]}@2x.${ext} 2x`)
+        img(alt="" srcset=`assets/${name}.${ext} 1x, assets/${name}@2x.${ext} 2x`)
+
+mixin svg_img(name, title, classes, viewbox)
+    svg.u-svg-icon(class=`${classes}` role="img" aria-hidden="true" viewBox=`${viewbox}`)
+        use(xlink:href=`assets/svg/sprites/icons.svg#${name}`)
+    span.u-visually-hidden= title
+
+mixin bg_section(image, classes)
+    div(class=`${classes}` style=`background-image: url(assets/${image})`)
+        if block
+            block

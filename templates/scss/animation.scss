@@ -1,0 +1,13 @@
+.a-wiggle {
+    animation: wiggle 1.25s ease-out;
+    transform-origin: center;
+}
+
+@keyframes wiggle {
+    0% { transform: none; }
+    20% { transform: translate3d(8%, 0, 0) rotate3d(0, 0, 1, 8deg); }
+    40% { transform: translate3d(-6%, 0, 0) rotate3d(0, 0, 1, -6deg); }
+    60% { transform: translate3d(4%, 0, 0) rotate3d(0, 0, 1, 4deg); }
+    80% { transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -2deg); }
+    100% { transform: none; }
+}

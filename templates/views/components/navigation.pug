@@ -1,0 +1,21 @@
+header.l-header
+    nav.c-navigation.js-nav
+        .c-navigation_left
+            a.c-logo(href='/')
+                +svg_img('logo', 'Logo Vita Verde', 'c-logo_image', '0 0 427 127')
+            .c-menu
+                .c-menu_icon
+                    span
+                ul.c-menu_list
+                    li.c-menu_item
+                        a.c-menu_link(href='#') Naše služby
+                    li.c-menu_item
+                        a.c-menu_link(href='#') Cenník
+                    li.c-menu_item
+                        a.c-menu_link(href='#') Objednávky
+                    li.c-menu_item
+                        a.c-menu_link(href='#') Darčekové poukážky
+        .c-navigation_right
+            form.c-search.js-search(action='#')
+                input.c-search_input(type="text" placeholder='Vyhľadávanie')
+                .c-search_close

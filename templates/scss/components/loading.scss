@@ -1,0 +1,23 @@
+.c-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $primary-col;
+
+    &_logo {
+        position: absolute;
+        width: 20%;
+        min-width: 10rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+
+        svg {
+            width: 100%;
+            stroke-width: 10;
+        }
+    }
+}

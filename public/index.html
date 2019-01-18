@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VitaVerde</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="l-wrapper">
+      <div class="c-loading js-loading">
+        <div class="c-loading_logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160">
+<defs>
+    <filter id="shadow" x="-200%" y="-40%" width="400%" height="200%">
+        <feOffset in="SourceAlpha" dx="25" dy="12" />
+        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.51" />
+        <feComponentTransfer>
+            <feFuncA type="linear" slope="0.05" />
+        </feComponentTransfer>
+        <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic" />
+        </feMerge>
+    </filter>
+</defs>
+<path style="filter:url(#shadow)" id="fg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M205.402,104.541
+	c-27.606,18.316-57.447,30.209-90.683,32.508c-25.62,1.781-51.184-0.877-72.833-16.299C20.719,105.676,7.854,71.249,36.95,46.47
+	c17.229-14.673,37.465-21.941,59.44-25.171c32.922-4.846,62.906,4.317,91.207,20.066l97.305,63.426
+	c27.605,18.316,56.762,29.959,89.998,32.258c25.619,1.781,51.184-0.877,72.832-16.299c21.168-15.074,34.032-49.501,4.937-74.28
+	c-17.229-14.673-37.466-21.941-59.44-25.171c-32.922-4.846-62.906,4.317-91.207,20.066L205.402,104.541z"/>
+<path id="bg" fill="none" stroke="currentColor" opacity="0.1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M205.402,104.541
+	c-27.606,18.316-57.447,30.209-90.683,32.508c-25.62,1.781-51.184-0.877-72.833-16.299C20.719,105.676,7.854,71.249,36.95,46.47
+	c17.229-14.673,37.465-21.941,59.44-25.171c32.922-4.846,62.906,4.317,91.207,20.066l97.305,63.426
+	c27.605,18.316,56.762,29.959,89.998,32.258c25.619,1.781,51.184-0.877,72.832-16.299c21.168-15.074,34.032-49.501,4.937-74.28
+	c-17.229-14.673-37.466-21.941-59.44-25.171c-32.922-4.846-62.906,4.317-91.207,20.066L205.402,104.541z"/>
+</svg>
+
+        </div>
+      </div>
+      <header class="l-header">
+        <nav class="c-navigation js-nav">
+          <div class="c-navigation_left"><a class="c-logo" href="/">
+                    <svg class="u-svg-icon c-logo_image" role="img" aria-hidden="true" viewBox="0 0 427 127">
+                      <use xlink:href="assets/svg/sprites/icons.svg#logo"></use>
+                    </svg><span class="u-visually-hidden">Logo Vita Verde</span></a>
+            <div class="c-menu">
+              <div class="c-menu_icon"><span></span></div>
+              <ul class="c-menu_list">
+                <li class="c-menu_item"><a class="c-menu_link" href="#">Naše služby</a></li>
+                <li class="c-menu_item"><a class="c-menu_link" href="#">Cenník</a></li>
+                <li class="c-menu_item"><a class="c-menu_link" href="#">Objednávky</a></li>
+                <li class="c-menu_item"><a class="c-menu_link" href="#">Darčekové poukážky</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-navigation_right">
+            <form class="c-search js-search" action="#">
+              <input class="c-search_input" type="text" placeholder="Vyhľadávanie">
+              <div class="c-search_close"></div>
+            </form>
+          </div>
+        </nav>
+      </header>
+      <section class="cover-slider js-cover_slider">
+        <div class="cover-slider_inner">
+          <div class="cover-slider_slides">
+            <div class="cover-slider_slide">
+              <div class="cover-slider_bg-container"><img class="cover-slider_bg" alt="" src="assets/cover1.jpg">
+              </div>
+              <div class="cover-slider_text">
+                <h1>Nekonečný relax a krása vo Vita Verde</h1>
+                <p>Objednajte sa na ľubovolný počet ošetrení a zaplatíte len raz. Bez starostí a jednoducho.</p>
+                <button class="btn btn__primary">Objednať</button>
+              </div>
+            </div>
+            <div class="cover-slider_slide">
+              <div class="cover-slider_bg-container"><img class="cover-slider_bg" alt="" src="assets/outside.jpg">
+              </div>
+              <div class="cover-slider_text">
+                <h2>Darčekové poukážky</h2>
+                <p>Ak k nám chodíte pravidelne, vďaka premanentkám ušetríte 20 - 30%. A to prospeje nie len Vášmu zdraviu ale aj Vašej peňaženke.</p>
+                <button class="btn btn__primary">Objednať</button>
+              </div><img class="cover-slider_img" alt="" src="assets/permanentka.png">
+            </div>
+          </div>
+          <div class="cover-slider_nav">
+            <div class="cover-slider_indicator"><span></span></div>
+            <div class="cover-slider_indicator"><span></span></div>
+          </div>
+        </div>
+      </section>
+      <section class="services"><a class="service js-service" href="#">
+          <div class="service_img-wrapper"><img class="service_img" alt="" src="assets/massage2.jpg">
+          </div>
+          <div class="service_text">
+            <h2 class="service_title" data-text="Masáže">Masáže</h2>
+            <p class="service_description">Masáž je vhodná nielen pre človeka so zdravotnými ťažkosťami, ale tiež pre ľudí, ktorí problémy zatiaľ nepociťujú. Masáž je veľmi dobrá pre ľudí, ktorí potrebujú uniknúť od každodenného stresu a hľadajú uvoľnenie a relax v príjemnom prostredí.</p>
+            <div class="service_btn btn btn__secondary"><span>Zistiť viac</span>
+              <div class="service_arrow"></div>
+            </div>
+          </div></a><a class="service js-service service__right" href="#">
+          <div class="service_img-wrapper"><img class="service_img" alt="" src="assets/kozmetika.jpg">
+          </div>
+          <div class="service_text">
+            <h2 class="service_title" data-text="Kozmetika">Kozmetika</h2>
+            <p class="service_description">Krásna pleť znamená zdravá pleť. Odráža výraz našej tváre. Starostlivosť o pokožku nie je luxusom, ale nevyhnutnosťou. S radom odborníkov prinášame patentované technológie bez skalpela a bolesti. Kozmetické terapie s relaxačným a uvoľňujúcim zážitkom. Vyberáme pre Vás ošetrenia, ktoré splnia, čo sľúbia.</p>
+            <div class="service_btn"></div>
+            <div class="service_btn btn btn__secondary"><span>Zistiť viac</span>
+              <div class="service_arrow"></div>
+            </div>
+          </div></a><a class="service js-service" href="#">
+          <div class="service_img-wrapper"><img class="service_img" alt="" src="assets/reflexna.jpg">
+          </div>
+          <div class="service_text">
+            <h2 class="service_title" data-text="Reflexná terapia">Reflexná terapia</h2>
+            <p class="service_description">Reflexná terapia, – reflexológia, – je spôsob diagnostiky a liečby zdravotných ťažkostí prostredníctvom stimulácie alebo masáže presne určených bodov a oblastí na povrchu ľudského tela. Vychádza z tisícročiami overených skúseností mnohých národov.</p>
+            <div class="service_btn"></div>
+            <div class="service_btn btn btn__secondary"><span>Zistiť viac</span>
+              <div class="service_arrow"></div>
+            </div>
+          </div></a></section>
+      <section class="c-reviews-slider js-reviews-slider">
+        <div class="c-reviews-slider_inner">
+          <div class="c-reviews-slider_slides">
+            <div class="c-reviews-slider_slide">
+              <div class="c-reviews-slider_slide-content">
+                <q class="c-reviews-slider_quote">Personál príjemný. Max. spokojnosť so službami, prístupom aj s prostredím. Odporúčam.</q>
+                <div class="c-reviews-slider_author">Majka (Facebook)</div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__left"></div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__right"></div>
+              </div>
+            </div>
+            <div class="c-reviews-slider_slide">
+              <div class="c-reviews-slider_slide-content">
+                <q class="c-reviews-slider_quote">Ďakujem, bola som veľmi spokojná. Už sa teším na ďalšiu návštevu Vita Verde.</q>
+                <div class="c-reviews-slider_author">Silvia (Google)</div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__left"></div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__right"></div>
+              </div>
+            </div>
+            <div class="c-reviews-slider_slide">
+              <div class="c-reviews-slider_slide-content">
+                <q class="c-reviews-slider_quote">Určite sa vrátim, krásne pohodové miesto, milí ľudia profesionáli čo iné si človek môže priať?</q>
+                <div class="c-reviews-slider_author">Andrea (Web)</div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__left"></div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__right"></div>
+              </div>
+            </div>
+            <div class="c-reviews-slider_slide">
+              <div class="c-reviews-slider_slide-content">
+                <q class="c-reviews-slider_quote">Som veľmi spokojná určite odporúčam či kozmetiku tak aj masáž.</q>
+                <div class="c-reviews-slider_author">Michaela (Web)</div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__left"></div>
+                <div class="c-reviews-slider_corner c-reviews-slider_corner__right"></div>
+              </div>
+            </div>
+          </div>
+          <div class="c-reviews-slider_nav">
+            <div class="c-reviews-slider_indicator"></div>
+            <div class="c-reviews-slider_indicator"></div>
+            <div class="c-reviews-slider_indicator"></div>
+            <div class="c-reviews-slider_indicator"></div>
+          </div>
+        </div>
+      </section>
+      <section class="benefits">
+        <h2 class="benefits_heading">Čo u nás nájdete?</h2>
+        <ul class="benefits_grid">
+          <li class="benefits_item">
+                  <svg class="u-svg-icon benefits_icon" role="img" aria-hidden="true" viewBox="0 0 80.678 62.117">
+                    <use xlink:href="assets/svg/sprites/icons.svg#cards"></use>
+                  </svg><span class="u-visually-hidden"></span>
+            <h3 class="benefits_title">Platby kartou</h3>
+            <p class="benefits_text">Nemusíte rozmýšľať, či máte dosť hotovosti. U nás zaplatíte jednoducho kartu.</p>
+          </li>
+          <li class="benefits_item">
+                  <svg class="u-svg-icon benefits_icon" role="img" aria-hidden="true" viewBox="0 0 66.524 67.52">
+                    <use xlink:href="assets/svg/sprites/icons.svg#calendar"></use>
+                  </svg><span class="u-visually-hidden"></span>
+            <h3 class="benefits_title">Objednávanie online</h3>
+            <p class="benefits_text">Objednajte sa z pohodlia domova 24 hodín denne 7 dní v týždni.</p>
+          </li>
+          <li class="benefits_item">
+                  <svg class="u-svg-icon benefits_icon" role="img" aria-hidden="true" viewBox="0 0 81.721 81.721">
+                    <use xlink:href="assets/svg/sprites/icons.svg#graphs"></use>
+                  </svg><span class="u-visually-hidden"></span>
+            <h3 class="benefits_title">Odborný personál</h3>
+            <p class="benefits_text">Dbáme na kvalitu. Naši zamestnanci sú vyštudovaní profesionáli.</p>
+          </li>
+          <li class="benefits_item">
+                  <svg class="u-svg-icon benefits_icon" role="img" aria-hidden="true" viewBox="0 0 88.274 64.901">
+                    <use xlink:href="assets/svg/sprites/icons.svg#chat"></use>
+                  </svg><span class="u-visually-hidden"></span>
+            <h3 class="benefits_title">Sms notifikácie</h3>
+            <p class="benefits_text">Nemusíte si pamätať kedy máte termín. Pripomenieme Vám.</p>
+          </li>
+          <li class="benefits_item">
+                  <svg class="u-svg-icon benefits_icon" role="img" aria-hidden="true" viewBox="0 0 73.404 82.565">
+                    <use xlink:href="assets/svg/sprites/icons.svg#tag"></use>
+                  </svg><span class="u-visually-hidden"></span>
+            <h3 class="benefits_title">Vernostný systém</h3>
+            <p class="benefits_text">Odmeňujeme našich verných. Využite aj vy špeciálne zľavy a výhody.</p>
+          </li>
+          <li class="benefits_item">
+                  <svg class="u-svg-icon benefits_icon" role="img" aria-hidden="true" viewBox="0 0 71.436 71.857">
+                    <use xlink:href="assets/svg/sprites/icons.svg#person"></use>
+                  </svg><span class="u-visually-hidden"></span>
+            <h3 class="benefits_title">Poradenstvo</h3>
+            <p class="benefits_text">Facebook, Blog, Eshop. Staráme sa o Vás.</p>
+          </li>
+        </ul>
+      </section>
+      <footer class="contact">
+        <div class="contact_map" id="map"></div>
+        <div class="contact_overlay"></div>
+        <div class="contact_text">
+          <div class="contact_block">
+            <h3 class="contact_title">Kontaktujte nás</h3>
+            <div class="contact_links"><a class="contact_link js-contact" href="https://goo.gl/maps/7AjgW9EsfZE2" target="_blank">
+                      <svg class="u-svg-icon contact_icon" role="img" aria-hidden="true" viewBox="0 0 154 200">
+                        <use xlink:href="assets/svg/sprites/icons.svg#marker"></use>
+                      </svg><span class="u-visually-hidden">adresa</span>
+                <address class="contact_address">
+                  <div>Mostná 56</div>
+                  <div>949 01 Nitra</div>
+                  <div>vchod z Podzámskej</div>
+                </address></a></div>
+            <div class="contact_links">
+              <div class="contact_row"><a class="contact_link" href="tel:+4200901123456">
+                        <svg class="u-svg-icon contact_icon" role="img" aria-hidden="true" viewBox="0 0 32 34">
+                          <use xlink:href="assets/svg/sprites/icons.svg#phone"></use>
+                        </svg><span class="u-visually-hidden">telefón</span>0901 123 456</a></div>
+              <div class="contact_row"><a class="contact_link" href="mailto:email@vitaverde.sk">
+                        <svg class="u-svg-icon contact_icon" role="img" aria-hidden="true" viewBox="0 0 40 30">
+                          <use xlink:href="assets/svg/sprites/icons.svg#mail"></use>
+                        </svg><span class="u-visually-hidden">email</span>email@vitaverde.sk</a></div>
+            </div>
+          </div>
+          <div class="contact_block">
+            <h3 class="contact_title">Otváracie hodiny</h3>
+                  <svg class="u-svg-icon contact_icon" role="img" aria-hidden="true" viewBox="0 0 44 46">
+                    <use xlink:href="assets/svg/sprites/icons.svg#clock"></use>
+                  </svg><span class="u-visually-hidden">otváracie hodiny</span>
+            <table class="contact_hours">
+              <tr>
+                <th>Po.</th>
+                <th>09:00 - 18:00</th>
+              </tr>
+              <tr>
+                <th>Ut.</th>
+                <th>09:00 - 18:00</th>
+              </tr>
+              <tr class="is-active">
+                <th>St.</th>
+                <th>09:00 - 18:00</th>
+              </tr>
+              <tr>
+                <th>Št.</th>
+                <th>09:00 - 18:00</th>
+              </tr>
+              <tr>
+                <th>Pi.</th>
+                <th>09:00 - 18:00</th>
+              </tr>
+              <tr class="is-inactive">
+                <th>So.</th>
+                <th>Zatvorené</th>
+              </tr>
+              <tr class="is-inactive">
+                <th>Ne.</th>
+                <th>Zatvorené</th>
+              </tr>
+            </table>
+          </div>
+          <div class="contact_block">
+            <h3 class="contact_title">Sledujte nás</h3><a class="contact_link" href="#" target="_blank">
+                    <svg class="u-svg-icon contact_icon contact_icon__social" role="img" aria-hidden="true" viewBox="0 0 67 67">
+                      <use xlink:href="assets/svg/sprites/icons.svg#facebook"></use>
+                    </svg><span class="u-visually-hidden">facebook</span></a><a class="contact_link" href="#" target="_blank">
+                    <svg class="u-svg-icon contact_icon contact_icon__social" role="img" aria-hidden="true" viewBox="0 0 67 67">
+                      <use xlink:href="assets/svg/sprites/icons.svg#twitter"></use>
+                    </svg><span class="u-visually-hidden">twitter</span></a><a class="contact_link" href="#" target="_blank">
+                    <svg class="u-svg-icon contact_icon contact_icon__social" role="img" aria-hidden="true" viewBox="0 0 67 67">
+                      <use xlink:href="assets/svg/sprites/icons.svg#google"></use>
+                    </svg><span class="u-visually-hidden">google</span></a><a class="contact_link" href="#" target="_blank">
+                    <svg class="u-svg-icon contact_icon contact_icon__social" role="img" aria-hidden="true" viewBox="0 0 67 67">
+                      <use xlink:href="assets/svg/sprites/icons.svg#youtube"></use>
+                    </svg><span class="u-visually-hidden">youtube</span></a><a class="contact_link" href="#" target="_blank">
+                    <svg class="u-svg-icon contact_icon contact_icon__social" role="img" aria-hidden="true" viewBox="0 0 67 67">
+                      <use xlink:href="assets/svg/sprites/icons.svg#instagram"></use>
+                    </svg><span class="u-visually-hidden">instagram</span></a><a class="contact_link" href="#" target="_blank">
+                    <svg class="u-svg-icon contact_icon contact_icon__social" role="img" aria-hidden="true" viewBox="0 0 67 67">
+                      <use xlink:href="assets/svg/sprites/icons.svg#linkedin"></use>
+                    </svg><span class="u-visually-hidden">linkedin</span></a><a class="contact_link" href="#" target="_blank">
+                    <svg class="u-svg-icon contact_icon contact_icon__social" role="img" aria-hidden="true" viewBox="0 0 67 67">
+                      <use xlink:href="assets/svg/sprites/icons.svg#tripadvisor"></use>
+                    </svg><span class="u-visually-hidden">tripadvisor</span></a>
+          </div>
+        </div>
+        <div class="contact_copyright">© 2018 Vita Verde, s.r.o.</div>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp2ofAf-mxoJiBxPgZv3JmRpN12KMFnQc&amp;callback=initMap"></script>
+  </body>
+</html>

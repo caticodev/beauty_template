@@ -1,0 +1,39 @@
+.btn {
+    padding: .75rem 1.25rem;
+    font-size: .875rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    @include ns {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+.btn__primary {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $primary-col;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba($primary-col, .5);
+
+    @include ns {
+        @include transition(background-color box-shadow, .3s ease);
+
+        &:hover {
+            color: $white;
+            background-color: shade($primary-col, .8);
+            box-shadow: 0 13px 30px rgba($primary-col, .6);
+        }
+    }
+}
+
+.btn__secondary {
+    font-weight: 600;
+    @include border-gradient($primary-col, #ed1c24, 2px);
+
+    span {
+        @include font-gradient($primary-col, #ed1c24, left);
+    }
+}

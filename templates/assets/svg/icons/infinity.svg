@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160">
+<defs>
+    <filter id="shadow" x="-200%" y="-40%" width="400%" height="200%">
+        <feOffset in="SourceAlpha" dx="25" dy="12" />
+        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.51" />
+        <feComponentTransfer>
+            <feFuncA type="linear" slope="0.05" />
+        </feComponentTransfer>
+        <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic" />
+        </feMerge>
+    </filter>
+</defs>
+<path style="filter:url(#shadow)" id="fg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M205.402,104.541
+	c-27.606,18.316-57.447,30.209-90.683,32.508c-25.62,1.781-51.184-0.877-72.833-16.299C20.719,105.676,7.854,71.249,36.95,46.47
+	c17.229-14.673,37.465-21.941,59.44-25.171c32.922-4.846,62.906,4.317,91.207,20.066l97.305,63.426
+	c27.605,18.316,56.762,29.959,89.998,32.258c25.619,1.781,51.184-0.877,72.832-16.299c21.168-15.074,34.032-49.501,4.937-74.28
+	c-17.229-14.673-37.466-21.941-59.44-25.171c-32.922-4.846-62.906,4.317-91.207,20.066L205.402,104.541z"/>
+<path id="bg" fill="none" stroke="currentColor" opacity="0.1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M205.402,104.541
+	c-27.606,18.316-57.447,30.209-90.683,32.508c-25.62,1.781-51.184-0.877-72.833-16.299C20.719,105.676,7.854,71.249,36.95,46.47
+	c17.229-14.673,37.465-21.941,59.44-25.171c32.922-4.846,62.906,4.317,91.207,20.066l97.305,63.426
+	c27.605,18.316,56.762,29.959,89.998,32.258c25.619,1.781,51.184-0.877,72.832-16.299c21.168-15.074,34.032-49.501,4.937-74.28
+	c-17.229-14.673-37.466-21.941-59.44-25.171c-32.922-4.846-62.906,4.317-91.207,20.066L205.402,104.541z"/>
+</svg>

@@ -1,0 +1,244 @@
+$black: #000;
+$white: #fff;
+$wine: #800040;
+$gray: #666;
+
+$primary-col: $wine;
+$text-col: $gray;
+$nav-mobile-col: $white;
+$footer-text: $white;
+
+$oswald: 'Oswald', sans-serif;
+
+// min small-width: 20em; // 320px
+$medium-width: 48em; // 768px
+$large-width: 64em; // 1024px
+
+// medium
+@mixin md {
+    @media (min-width: #{$medium-width}) and (max-width: #{$large-width - .001em}) {
+        @content;
+    }
+}
+
+// not small (medium and large)
+@mixin ns {
+    @media (min-width: #{$medium-width}) {
+        @content;
+    }
+}
+
+// not large (small and medium)
+@mixin nlg {
+    @media (max-width: #{$large-width - .001em}) {
+        @content;
+    }
+}
+
+// large
+@mixin lg {
+    @media (min-width: #{$large-width}) {
+        @content;
+    }
+}
+
+// custom media
+@mixin min-width($width) {
+    @media (min-width: #{$width}) {
+        @content;
+    }
+}
+
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+// Usage:   @include transition(width height, 0.3s ease-in-out);
+// Output:  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+//
+// Pass in any number of transitions
+
+// Custom easing variables
+$cubic: cubic-bezier(.65, .05, .36, 1);
+
+@mixin transition($properties, $transition...) {
+    // Default values
+    $duration: .3s;
+    $easing: null; // Browser default is ease, which is what we want
+    $delay: null; // Browser default is 0, which is what we want
+    $defaultTransition: ($duration, $easing, $delay);
+
+    $unfoldedTransitions: ();
+    @for $i from 1 through length($properties) {
+        $unfoldedTransition: ();
+        @if length($transition) == 0 {
+            $unfoldedTransition: join(nth($properties, $i), $defaultTransition, space);
+        }
+        @else {
+            $unfoldedTransition: join(nth($properties, $i), $transition, space);
+        }
+        $unfoldedTransitions: append($unfoldedTransitions, $unfoldedTransition, comma);
+    }
+    transition: $unfoldedTransitions;
+}
+
+@function tint($color, $weight) {
+    @return mix($color, $white, $weight * 100%);
+}
+
+@function shade($color, $weight) {
+    @return mix($color, $black, $weight * 100%);
+}
+
+@function sqrt($r) {
+    $x0: 1;
+    $x1: $x0;
+    @for $i from 1 through 10 {
+        $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+        $x0: $x1;
+    }
+    @return $x1;
+}
+
+@mixin hex-grid($width, $units, $rows, $columns, $skip...) {
+    width: #{$width}#{$units};
+    $el-width: $width / ($columns * 3 + 1) * 4;
+    $el-height: sqrt(3) * $el-width / 2;
+    grid-template-columns: repeat($columns, 1fr 2fr) 1fr;
+    grid-template-rows: repeat($rows * 2 + 1, #{$el-height / 2}#{$units});
+    $row-span: 2;
+    $col-span: 3;
+    $i: 1;
+    $n: 1;
+    @for $row from 1 through $rows {
+        @for $col from 1 through $columns {
+            @if index($skip, $i) == null {
+                & > *:nth-child(#{$n}) {
+                    $row-start: if($row > 1, $row * 2 - 1, $row);
+                    $row-start: if($col % 2 == 0, $row-start + 1, $row-start);
+                    $col-start: if($col > 1, $col * 2 - 1, $col);
+                    grid-row: $row-start / span $row-span;
+                    grid-column: $col-start / span $col-span;
+                    $n: $n + 1;
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+}
+
+@function top-shadow($level) {
+    $primary-offset: nth(1.5 3 10 14 19, $level) * 1px;
+    $blur: nth(1.5 3 10 14 19, $level) * 4px;
+    $color: rgba(black, nth(.12 .16 .19 .25 .3, $level));
+    @return 0 $primary-offset $blur $color;
+}
+
+@function bottom-shadow($level) {
+    $primary-offset: nth(1.5 3 6 10 15, $level) * 1px;
+    $blur: nth(1 3 3 5 6, $level) * 4px;
+    $color: rgba(black, nth(.24 .23 .23 .22 .22, $level));
+    @return 0 $primary-offset $blur $color;
+}
+
+@mixin text-shadow($level) {
+    text-shadow: bottom-shadow($level), top-shadow($level);
+}
+
+@mixin box-shadow($level) {
+    box-shadow: bottom-shadow($level), top-shadow($level);
+}
+
+@mixin filter-shadow($level) {
+    filter: drop-shadow(bottom-shadow($level)) drop-shadow(top-shadow($level));
+}
+
+@mixin box-shadow-hover($level) {
+    @include box-shadow($level);
+    transform: translateY(-5px);
+}
+
+@mixin shadow-2dp {
+    filter:
+        drop-shadow(0 2px 2px rgba(0, 0, 0, .12))
+        drop-shadow(0 3px 1px rgba(0, 0, 0, .14))
+        drop-shadow(0 1px 5px rgba(0, 0, 0, .12))
+        drop-shadow(0 -1px 2px rgba(0, 0, 0, .1));
+}
+
+@mixin shadow-3dp {
+    filter:
+        drop-shadow(0 3px 4px rgba(0, 0, 0, .12))
+        drop-shadow(0 3px 3px rgba(0, 0, 0, .14))
+        drop-shadow(0 1px 8px rgba(0, 0, 0, .12))
+        drop-shadow(0 -2px 2px rgba(0, 0, 0, .1));
+}
+
+@mixin shadow-4dp {
+    filter:
+        drop-shadow(0 4px 5px rgba(0, 0, 0, .12))
+        drop-shadow(0 1px 10px rgba(0, 0, 0, .14))
+        drop-shadow(0 2px 4px rgba(0, 0, 0, .12))
+        drop-shadow(0 -1px 3px rgba(0, 0, 0, .1));
+}
+
+@mixin shadow-6dp {
+    filter:
+        drop-shadow(0 6px 10px rgba(0, 0, 0, .12))
+        drop-shadow(0 1px 18px rgba(0, 0, 0, .14))
+        drop-shadow(0 3px 5px rgba(0, 0, 0, .12))
+        drop-shadow(0 -2px 3px rgba(0, 0, 0, .1));
+}
+
+@mixin shadow-8dp {
+    filter:
+        drop-shadow(0 8px 10px rgba(0, 0, 0, .12))
+        drop-shadow(0 3px 14px rgba(0, 0, 0, .14))
+        drop-shadow(0 5px 5px rgba(0, 0, 0, .12))
+        drop-shadow(0 -2px 4px rgba(0, 0, 0, .1));
+}
+
+@mixin shadow-16dp {
+    filter:
+        drop-shadow(0 16px 24px rgba(0, 0, 0, .12))
+        drop-shadow(0 6px 30px rgba(0, 0, 0, .14))
+        drop-shadow(0 8px 10px rgba(0, 0, 0, .12))
+        drop-shadow(0 -3px 4px rgba(0, 0, 0, .1));
+}
+
+@mixin shadow-24dp {
+    filter:
+        drop-shadow(0 9px 46px rgba(0, 0, 0, .12))
+        drop-shadow(0 11px 15px rgba(0, 0, 0, .14))
+        drop-shadow(0 24px 38px rgba(0, 0, 0, .12))
+        drop-shadow(0 -3px 5px rgba(0, 0, 0, .1));
+}
+
+@mixin font-gradient($from, $to, $dir) {
+    background: -webkit-linear-gradient($dir, $from, $to);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin border-gradient($from, $to, $width) {
+    border-left: $width solid $from;
+    border-right: $width solid $to;
+    background-image:
+        linear-gradient(to right, $from, $to),
+        linear-gradient(to right, $from, $to);
+    background-size: 100% $width;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}

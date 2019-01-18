@@ -1,0 +1,112 @@
+$pinSize: 3rem;
+$pinColor: $primary-col;
+
+$pinHeightFactor: ((1 + sqrt(2)) /2);
+$pinHeight: $pinHeightFactor * $pinSize;
+$shadowOpacity: .5;
+$shadow-size: 2rem;
+$pulseSize: 5rem;
+
+.c-marker {
+    position: absolute;
+
+    &_shadow {
+        position: absolute;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: $shadow-size;
+            height: $shadow-size;
+            left: -6.25rem - $shadow-size/2;
+            margin-top: -$shadow-size/2;
+            transform: rotateX(55deg);
+            border-radius: 50%;
+            box-shadow: rgba($black, $shadowOpacity) 6.25rem 0 1.25rem;
+        }
+    }
+
+    &_pulse {
+        position: absolute;
+        margin-top: -$pulseSize/2;
+        margin-left: -$pulseSize/2;
+        transform: rotateX(55deg);
+
+        &::after {
+            content: '';
+            display: block;
+            width: $pulseSize;
+            height: $pulseSize;
+            opacity: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 2px 2px rgba($pinColor, $shadowOpacity);
+            animation: pulsate 4s ease-out 2s infinite;
+        }
+    }
+
+    &_pin-wrap {
+        position: absolute;
+        width: $pinSize;
+        height: $pinSize;
+        margin-top: -$pinHeight;
+        margin-left: -$pinSize/2;
+        transform-origin: 50% ($pinHeightFactor * 100%) 0;
+    }
+
+    &_pin {
+        position: absolute;
+        width: $pinSize;
+        height: $pinSize;
+        top: 50%;
+        left: 50%;
+        margin-top: -$pinSize/2;
+        margin-left: -$pinSize/2;
+        transform-origin: 50% ($pinHeightFactor * 100%) 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: $pinSize - .5rem;
+            height: $pinSize - .5rem;
+            top: .25rem;
+            left: .25rem;
+            border: $pinSize/5 solid $pinColor;
+            border-radius: 100%;
+            transform: rotateZ(-45deg);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: $pinSize;
+            height: $pinSize;
+            border: $pinSize/5 solid $pinColor;
+            border-radius: 100% 100% 100% 0;
+            transform: rotateZ(-45deg);
+        }
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(.1, .1);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
+}

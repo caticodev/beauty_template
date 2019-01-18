@@ -1,0 +1,99 @@
+.benefits {
+    position: relative;
+    padding: 3rem 0;
+    text-align: center;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba($primary-col, 0), rgba($primary-col, .1));
+    @include ns {
+        padding: 5rem 0;
+    }
+
+    &_bg {
+        opacity: .1;
+    }
+
+    &_heading {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 100;
+        color: $primary-col;
+
+        @include ns {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &_grid {
+        display: grid;
+        justify-items: auto;
+        align-items: auto;
+        margin: 0 auto;
+        @include hex-grid(20, rem, 3, 2);
+
+        @include min-width(32em) {
+            @include hex-grid(30, rem, 2, 3);
+        }
+
+        @include md {
+            @include hex-grid(45, rem, 2, 3);
+        }
+
+        @include lg {
+            @include hex-grid(60, rem, 2, 4, 3, 6);
+        }
+    }
+
+    &_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+        margin: .125rem;
+        background-color: $white;
+        filter: drop-shadow(1px 1px 3px rgba($primary-col, .2));
+        stroke-dasharray: 220;
+
+        @include ns {
+            margin: .4325rem .5rem;
+        }
+    }
+
+    &_icon {
+        width: 2rem;
+        margin-bottom: .5rem;
+
+        @include ns {
+            width: 4rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &_title {
+        margin-bottom: .5rem;
+        font-size: .875rem;
+        font-weight: 700;
+        color: $primary-col;
+
+        @include ns {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+    }
+
+    &_text {
+        padding: 0 1.5rem;
+        font-size: .75rem;
+        line-height: 1.15;
+
+        @include min-width(32em) {
+            padding: 0 2rem;
+        }
+
+        @include ns {
+            padding: 0 3rem;
+            font-size: .875rem;
+        }
+    }
+}

@@ -1,0 +1,176 @@
+.contact {
+    position: relative;
+    color: $footer-text;
+
+    &_map {
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &_overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to top, rgba($primary-col, .95) 0%, rgba($primary-col, .6) 60%, rgba($primary-col, 0) 100%);
+        z-index: 1;
+        pointer-events: none;
+
+        @include ns {
+            background: linear-gradient(to right, rgba($primary-col, .95), rgba($primary-col, 0));
+        }
+    }
+
+    &_text {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-top: 15rem;
+        padding: 0 .5rem 3rem;
+        font-size: .875rem;
+        line-height: 1.25;
+        text-align: center;
+        z-index: 1;
+
+        @include ns {
+            width: auto;
+            margin-top: 0;
+            padding: 3rem 0 3.5rem 3rem;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        @include lg {
+            padding-left: 8vw;
+        }
+    }
+
+    &_block {
+        display: inline-block;
+        vertical-align: top;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+
+            @include ns {
+                margin-bottom: 3rem;
+                padding: 0;
+            }
+        }
+
+        @include ns {
+            display: block;
+        }
+    }
+
+    &_title {
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+
+        @include ns {
+            font-size: 1.5rem;
+        }
+    }
+
+    &_links {
+        text-align: left;
+
+        @include ns {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    &_row:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &_link {
+        display: inline-block;
+        font-size: 1rem;
+
+        @include ns {
+            font-size: 1.25rem;
+            @include transition(filter);
+
+            &:hover {
+                filter: drop-shadow(2px 2px 3px rgba($black, .3));
+
+                .contact_icon {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &_icon {
+        display: inline-block;
+        width: 1rem;
+        margin-right: .5rem;
+        vertical-align: middle;
+        opacity: .5;
+
+        @include ns {
+            width: 1.5rem;
+            margin-right: .75rem;
+            @include transition(opacity);
+        }
+
+        &__social {
+            width: 2rem;
+
+            @include ns {
+                width: 3rem;
+            }
+        }
+    }
+
+    &_address {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        margin-bottom: 1rem;
+        font-size: .875rem;
+
+        @include ns {
+            margin-right: 2rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+    }
+
+    &_hours {
+        display: inline-block;
+        vertical-align: top;
+
+        th {
+            min-width: 2rem;
+        }
+
+        tr {
+            &.is-active {
+                font-weight: 700;
+            }
+
+            &.is-inactive {
+                opacity: .5;
+            }
+        }
+    }
+
+    &_copyright {
+        position: absolute;
+        bottom: .5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        opacity: .6;
+        font-size: .75rem;
+    }
+}

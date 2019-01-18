@@ -1,0 +1,56 @@
+// Base styles
+//
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    color: $text-col;
+    overflow-x: hidden;
+}
+
+a,
+button {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: inherit;
+    opacity: 1; /* Firefox */
+    @include transition(color);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: inherit;
+    @include transition(color);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: inherit;
+    @include transition(color);
+}
+
+a,
+a:focus,
+a:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+// google maps fixes
+.gm-iv-address {
+    height: auto !important;
+}
+
+.gm-iv-address-description {
+    min-width: 135px !important;
+}

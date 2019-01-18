@@ -1,0 +1,21 @@
+// Layout classes
+//
+.l-header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.l-container {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.l-wrapper {
+    overflow-x: hidden;
+    position: absolute;
+
+    @include ns {
+        position: static;
+    }
+}

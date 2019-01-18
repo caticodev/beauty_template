@@ -1,0 +1,234 @@
+.cover-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    &_inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &_slides {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &_slide {
+        display: none;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        will-change: transform, width, right, left;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &_bg-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        z-index: 1;
+        background-size: cover;
+        image-rendering: optimizeQuality;
+        will-change: left, right;
+    }
+
+    &_bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-50%) translateY(-50%);
+        object-fit: cover;
+    }
+
+    &_text {
+        position: absolute;
+        top: 35%;
+        left: 0;
+        width: 100vw;
+        padding: 0 .5rem;
+        z-index: 2;
+        color: $text-col;
+        text-align: center;
+        will-change: width, left, right;
+        line-height: 1.15;
+
+        @include ns {
+            width: 100%;
+            top: 45%;
+            max-width: 40rem;
+            padding-left: 5rem;
+            text-align: left;
+        }
+
+        @include lg {
+            padding-left: 8vw;
+            max-width: 43rem;
+        }
+
+        h1,
+        h2 {
+            display: inline-block;
+            color: $primary-col;
+            font-family: $oswald;
+            font-size: 2.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            will-change: transform, opacity;
+
+            @include ns {
+                font-size: 4rem;
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 100;
+            margin: 1.5rem auto;
+            max-width: 40rem;
+
+            @include ns {
+                margin: 3rem auto;
+                font-size: 1.375rem;
+            }
+        }
+    }
+
+    &_gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, $white, #fad7e8);
+        z-index: 1;
+    }
+
+    &_img {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: 80%;
+        z-index: 1;
+        transform: translateX(-50%);
+        opacity: .2;
+
+        @include ns {
+            left: 60%;
+            transform: none;
+        }
+
+        @include lg {
+            opacity: 1;
+        }
+    }
+
+    &_nav {
+        position: absolute;
+        display: flex;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        counter-reset: indicator;
+
+        @include ns {
+            bottom: 2rem;
+        }
+    }
+
+    &_indicator {
+        counter-increment: indicator;
+        display: inline-block;
+        position: relative;
+        height: 1.375rem;
+        padding: 0 1rem;
+        margin: 0 .5rem;
+        font-size: .875rem;
+        font-weight: 900;
+        color: rgba($text-col, .2);
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 1s ease 1s;
+
+        @include ns {
+            height: 1.5rem;
+            padding: 0 2rem;
+            font-size: 1rem;
+            transition: opacity 1s ease 1s, color .3s;
+
+            &:hover {
+                color: rgba($primary-col, .4);
+            }
+        }
+
+        &::before {
+            content: counter(indicator, decimal-leading-zero);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: .25rem;
+            background-color: currentColor;
+            border-radius: .25rem;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            overflow: hidden;
+            color: rgba($primary-col, .7);
+
+            &::before {
+                content: counter(indicator, decimal-leading-zero);
+                position: absolute;
+                top: 0;
+                left: inherit;
+                right: inherit;
+                margin: 0 1rem;
+
+                @include ns {
+                    margin: 0 2rem;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: .25rem;
+                background-color: currentColor;
+                border-radius: .25rem;
+                z-index: 1;
+            }
+        }
+    }
+}

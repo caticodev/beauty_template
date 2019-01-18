@@ -1,0 +1,64 @@
+footer.contact
+    #map.contact_map
+    .contact_overlay
+    .contact_text
+        .contact_block
+            h3.contact_title Kontaktujte nás
+            .contact_links
+                a.contact_link.js-contact(href='https://goo.gl/maps/7AjgW9EsfZE2' target='_blank')
+                    +svg_img('marker', 'adresa', 'contact_icon', '0 0 154 200')
+                    address.contact_address
+                        div Mostná 56
+                        div 949 01 Nitra
+                        div vchod z Podzámskej
+            .contact_links
+                .contact_row
+                    a.contact_link(href='tel:+4200901123456')
+                        +svg_img('phone', 'telefón', 'contact_icon', '0 0 32 34')
+                        | 0901 123 456
+                .contact_row
+                    a.contact_link(href='mailto:email@vitaverde.sk')
+                        +svg_img('mail', 'email', 'contact_icon', '0 0 40 30')
+                        | email@vitaverde.sk
+        .contact_block
+            h3.contact_title Otváracie hodiny
+            +svg_img('clock', 'otváracie hodiny', 'contact_icon', '0 0 44 46')
+            table.contact_hours
+                tr
+                    th Po.
+                    th 09:00 - 18:00
+                tr
+                    th Ut.
+                    th 09:00 - 18:00
+                tr.is-active
+                    th St.
+                    th 09:00 - 18:00
+                tr
+                    th Št.
+                    th 09:00 - 18:00
+                tr
+                    th Pi.
+                    th 09:00 - 18:00
+                tr.is-inactive
+                    th So.
+                    th Zatvorené
+                tr.is-inactive
+                    th Ne.
+                    th Zatvorené
+        .contact_block
+            h3.contact_title Sledujte nás
+            a.contact_link(href='#' target='_blank')
+                +svg_img('facebook', 'facebook', 'contact_icon contact_icon__social', '0 0 67 67')
+            a.contact_link(href='#' target='_blank')
+                +svg_img('twitter', 'twitter', 'contact_icon contact_icon__social', '0 0 67 67')
+            a.contact_link(href='#' target='_blank')
+                +svg_img('google', 'google', 'contact_icon contact_icon__social', '0 0 67 67')
+            a.contact_link(href='#' target='_blank')
+                +svg_img('youtube', 'youtube', 'contact_icon contact_icon__social', '0 0 67 67')
+            a.contact_link(href='#' target='_blank')
+                +svg_img('instagram', 'instagram', 'contact_icon contact_icon__social', '0 0 67 67')
+            a.contact_link(href='#' target='_blank')
+                +svg_img('linkedin', 'linkedin', 'contact_icon contact_icon__social', '0 0 67 67')
+            a.contact_link(href='#' target='_blank')
+                +svg_img('tripadvisor', 'tripadvisor', 'contact_icon contact_icon__social', '0 0 67 67')
+    .contact_copyright © 2018 Vita Verde, s.r.o.
